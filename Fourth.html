@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fourth Question</title>
+  </head>
+  <body>
+    <h1>Explain 3 properties of argument object.</h1>
+    <div id="demo"></div>
+    <div id="demo2"></div>
+    <div id="demo3"></div>
+    <script>
+      function myFunc1() {
+        return function (n) {
+          if (n <= 1) return 1;
+          return n * arguments.callee(n - 1);
+        };
+      }
+      var ans = myFunc1()(5);
+      document.getElementById("demo").innerHTML =
+        "Factorial of 5 is: " + ans + ". Using <b>argument.callee</b> property";
+
+      function myFunc2() {
+        var sum = 0;
+        for (var i = 0; i < arguments.length; i++) {
+          sum = sum + arguments[i];
+        }
+        return sum;
+      }
+      var total = myFunc2(10, 20, 30);
+      document.getElementById("demo2").innerHTML =
+        "Sum of 10, 20 and 30 is: " +
+        total +
+        ". Using <b>arguments.length</b> property.";
+
+      function myFunc3() {
+        for (let letter of arguments) {
+          console.log(letter);
+        }
+      }
+      myFunc3("S", "O", "R", "A", "B");
+    </script>
+  </body>
+</html>

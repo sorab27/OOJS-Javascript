@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Third Question</title>
+  </head>
+  <body>
+    <h1>Explain difference between Bind and Call (example).</h1>
+    <p>
+      <b> Defination of Bind Function:</b> The JavaScript Function bind() method
+      is used to create a new function. When a function is called, it has its
+      own this keyword set to the provided value, with a given sequence of
+      arguments.
+    </p>
+    <p>
+      <b> Defination of Call Function:</b> The JavaScript Function call() method
+      is used to call a function contains this value and an argument provided
+      individually.
+    </p>
+    <br />
+    <script>
+      let name = {
+        firstName: "Sorab",
+        lastName: "Khanna",
+      };
+
+      let printName = function () {
+        document.write(this.firstName + " " + this.lastName + "<br><br>");
+      };
+
+      let myName = printName.bind(name);
+      console.log(myName);
+      myName();
+
+      printName.call(name);
+    </script>
+  </body>
+</html>

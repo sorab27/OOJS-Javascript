@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Seventh Question</title>
+  </head>
+  <body>
+    <h1>Explain 5 array methods with example.</h1>
+    <div id="demo"></div>
+    <div id="demo2"></div>
+    <div id="demo3"></div>
+    <div id="demo4"></div>
+    <div id="demo5"></div>
+    <script>
+      var cars = ["Bugati", "Ferrari", "Lambo", "Rolls Royce"];
+      document.getElementById("demo").innerHTML =
+        "<b>toString() method</b> <br>" + cars.toString() + "<br><br>";
+
+      document.getElementById("demo2").innerHTML =
+        "<b>join() method</b> <br>" + cars.join(" & ") + "<br><br>";
+
+      document.getElementById("demo3").innerHTML =
+        "<b>pop() method</b> <br>" +
+        cars.pop() +
+        " is not a sports car!" +
+        "<br><br>";
+
+      document.getElementById("demo4").innerHTML =
+        "<b>reverse() method</b> <br>" + cars.reverse() + "<br><br>";
+
+      document.getElementById("demo5").innerHTML =
+        "<b>sort() method</b> <br>" + cars.sort();
+    </script>
+  </body>
+</html>

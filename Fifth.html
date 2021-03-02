@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fifth Question</title>
+  </head>
+  <body>
+    <h1>
+      Create a function which returns number of invocations and number of
+      instances of a function.
+    </h1>
+    <script>
+      var myFunc = {
+        value: 0,
+        increment: function (inc) {
+          this.value += typeof inc === "number" ? inc : 5;
+        },
+      };
+
+      myFunc.increment();
+      document.write(myFunc.value + "<br>");
+
+      myFunc.increment(10);
+      document.write(myFunc.value + "<br>");
+    </script>
+  </body>
+</html>

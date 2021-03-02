@@ -1,0 +1,1 @@
+This repository contains the assignment of OOJA javscript session.
