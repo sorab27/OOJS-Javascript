@@ -13,9 +13,13 @@
     </h1>
     <script>
       var array = [1, 2, 3, 4, 5];
-      setTimeout(function () {
-        document.write(array);
-      }, 3000);
+      for (var i = 0; i < array.length; i++) {
+        (function (i) {
+          setTimeout(function () {
+            console.log("Element is: ", i);
+          }, 3000 * i);
+        })(i);
+      }
     </script>
   </body>
 </html>

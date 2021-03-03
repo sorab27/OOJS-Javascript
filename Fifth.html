@@ -12,18 +12,27 @@
       instances of a function.
     </h1>
     <script>
-      var myFunc = {
-        value: 0,
-        increment: function (inc) {
-          this.value += typeof inc === "number" ? inc : 5;
-        },
+      var invokeCount = 0;
+      var instanceCount = 0;
+
+      function Name(first, last) {
+        this.first = first;
+        this.last = last;
+        instanceCount += 1;
+      }
+
+      Name.prototype.getFull = function () {
+        invokeCount += 1;
+        return this.first + " " + this.last;
       };
 
-      myFunc.increment();
-      document.write(myFunc.value + "<br>");
+      var p1 = new Name("Sorab", "Khanna");
+      var p2 = new Name("Ravi", "Singh");
 
-      myFunc.increment(10);
-      document.write(myFunc.value + "<br>");
+      console.log(p1.getFull());
+      console.log(p2.getFull());
+      console.log("Number of invokation count: " + invokeCount);
+      console.log("Number of instances: " + instanceCount);
     </script>
   </body>
 </html>
